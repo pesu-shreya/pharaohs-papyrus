@@ -4,15 +4,19 @@ import "./LoginSignUp.css";
 import user_icon from "../Assets/person.png";
 import email_icon from "../Assets/email.png";
 import password_icon from "../Assets/password.png";
+import register_image from "../Assets/LoginBackground.jpg"
 
 const LoginSignUp = () => {
-    const [action, setAction] = useState("Login");
+    const [action, setAction] = useState("Sign Up");
     const toggleAction = () => {
         setAction(action === "Login" ? "Sign Up" : "Login");
     };
 
     return (
         <div className="layout">
+            <div className="registerImage">
+                <img src={register_image} alt="login_image" />
+            </div>
             <div className="container">
                 <div className="header">
                     <div className="text">{action}</div>
@@ -60,6 +64,8 @@ const LoginSignUp = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

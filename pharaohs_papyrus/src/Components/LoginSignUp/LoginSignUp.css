@@ -1,15 +1,16 @@
 .layout{
     display: flex;
     flex-direction: row;
-    background: #ffffff;
+    background:#ffffff;
     height: auto;
-    margin-top: 100px;
+    margin-top: 0px;
+    justify-content: center;
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    margin-left: 150px;               /*align container to center*/
+    /*margin-left: 150px;               /*align container to center*/
     margin-top: 50px;
     background: #f5f5f5;
     margin-bottom: 50px;
@@ -30,6 +31,7 @@
     color: #2d2d2d;
     font-size: 40px;        /*og 30px*/
     font-weight: 700;
+    font-family: "papyrus";
 }
 
 .underline{
@@ -68,18 +70,23 @@
     outline: none;
     color: #797979;
     font-size: 17px;
+    font-family: "papyrus";
 }
 
 .accountCheck{
     padding-left: 60px;
     margin-top: 30px;
     color: #545454;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 550;
+    font-family: "papyrus";
+
 }
 
 .accountCheck span{
     color: #b8860b;
     cursor: pointer; 
+    font-family: "papyrus";
 }
 
 .submitContainer{
@@ -97,9 +104,24 @@
     color: #ffffff;
     background: #cd9b1d;
     border-radius: 50px;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 500;
     cursor: pointer;
+    font-family: "papyrus";
+
+}
+
+.registerImage{
+    display: flex;
+    margin-top: 50px;
+    height: 550px;
+    width: auto;
+    
+}
+
+.registerImage img{
+    border-radius: 20px;
+    height: auto;
 }
 
 
