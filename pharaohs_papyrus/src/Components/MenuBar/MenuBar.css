@@ -1,74 +1,92 @@
-.menu{
+.menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #000000;
     height: auto;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.websiteName{
-    display:flex;
-    flex-direction: row;
+.websiteName {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px
+    height: 150px;
+    padding-left: 50px;
 }
 
-.textWebsite{
+.textWebsite {
     font-family: "papyrus";
     color: #b8860b;
-    font-size: 80px;
-    /*gap: ;*/
+    font-size: 70px;
 }
 
-.menuIcons{
+.underlined {
+    width: 50px;
+    height: 5px;
+    background: #b8860b;
+    border-radius: 10px;
+}
+
+.menuIcons {
     display: flex;
     flex-direction: row;
-    background-color: #efcf83;
+    background-color: #000000;
     height: 45px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    padding-right: 50px;
+    gap: 25px;
+    /*border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;*/
 }
 
-.homeLogo{
+.homeLogo {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 20px;
+    border: solid 2px;
+    border-color: rgb(250, 244, 160);
+    padding-right: 13px;
+    padding-left: 10px;
 }
 
-.homeLogo img{
-    padding-left: 20px;
-    height: 37px;
-    width: 37px;
+.homeLogo img {
+    height: 40px;
+    width: 40px;
 }
 
-.homeText{
+.homeText {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 15px;
     cursor: pointer;
+    color: bisque;
 }
 
-.homeText span{
+.homeText span {
     font-family: "bradley hand itc";
     font-size: 28px;
     font-weight: bold;
 }
 
-.aboutUs{
+.aboutUs {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 15px;
+    border: solid 2px;
+    border-color: rgb(33, 174, 171);
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.aboutUs span{
+.aboutUs span {
     font-family: "bradley hand itc";
     font-size: 28px;
-    padding-left: 40px;    
     font-weight: bold;
     cursor: pointer;
-
+    color: bisque;
 }

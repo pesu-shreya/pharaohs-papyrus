@@ -17,7 +17,11 @@ const LoginSignUp = () => {
             <div className="registerImage">
                 <img src={register_image} alt="login_image" />
             </div>
+            <div className="fullContainer">
+
+            </div>
             <div className="container">
+
                 <div className="header">
                     <div className="text">{action}</div>
                     <div className="underline"></div>
