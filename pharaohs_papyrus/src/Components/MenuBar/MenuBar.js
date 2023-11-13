@@ -21,7 +21,7 @@ const MenuBar = () => {
                     <span>About Us</span>
                 </div>
             </div>
-        </div>
+        </div> 
     );
 };
 

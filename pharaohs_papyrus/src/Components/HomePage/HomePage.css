@@ -1,0 +1,67 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+.homeBackground {
+    position: relative;
+}
+
+.homeBackground img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcomeMessage {
+    display: flex;
+    margin-top: 50px;
+}
+
+.welcomeMessage span {
+    margin-top: 50px;
+    font-size: 70px;
+    font-family: 'bookman old style';
+}
+
+.introMessage {
+    display: flex;
+    margin-top: 30px;
+}
+
+.introMessage span {
+    font-size: 26px;
+    font-family: 'bookman old style';
+}
+
+.submitContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    background-color: #ecd18e;
+    border-radius: 50px;
+    height: 50px;
+    width: 200px;
+}
+
+.submitContainer span {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'bookman old style';
+    cursor: pointer;
+}

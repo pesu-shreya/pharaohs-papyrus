@@ -1,17 +1,26 @@
-import React from 'react'
-import MenuBar from '../MenuBar/MenuBar'
+import React from 'react';
+import './HomePage.css';
+import home_background from '../Assets/LoginBackground.jpg';
 
 const HomePage = () => {
     return (
         <div className='homeContainer'>
-            <div className='welcomeMessage'></div>
-            <div className='introMessage'></div>
-            <div className='submitContainer'>
-
+            <div className='homeBackground'>
+                <img src={home_background} alt='Background' />
+                <div className='overlay'>
+                    <div className='welcomeMessage'>
+                        <span>Welcome to Pharaoh's Papyrus</span>
+                    </div>
+                    <div className='introMessage'>
+                        <span>Need help organizing your day? This digital planner does just that!</span>
+                    </div>
+                    <div className='submitContainer'>
+                        <span>Get Started!</span>
+                    </div>
+                </div>
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default HomePage
+export default HomePage;
