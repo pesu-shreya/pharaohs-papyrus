@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./LoginSignUp.css";
+import { Link } from "react-router-dom";
+
+
 
 import user_icon from "../Assets/person.png";
 import email_icon from "../Assets/email.png";
@@ -64,7 +67,9 @@ const LoginSignUp = () => {
                             setAction(action);
                         }}
                     >
-                        {action}
+                        <Link to="/login/home" style={{ textDecoration: "none", color: "white" }}>
+                            {action}
+                        </Link>
                     </div>
                 </div>
             </div>
