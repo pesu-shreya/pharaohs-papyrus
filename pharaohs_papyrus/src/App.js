@@ -1,25 +1,23 @@
 //import logo from './Components/Assets/papyrus.jpg';
-import './App.css';
-import LandingPage from './Components/LandingPage/LandingPage';
-import LoginSignUp from './Components/LoginSignUp/LoginSignUp';
-import MenuBar from './Components/MenuBar/MenuBar';
+import "./App.css";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import LoginSignUp from "./Components/LoginSignUp/LoginSignUp";
+import MenuBar from "./Components/MenuBar/MenuBar";
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <MenuBar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginSignUp/>}/>
-          
-          
-        </Routes>
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <MenuBar />
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/login" element={<LoginSignUp />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 export default App;
