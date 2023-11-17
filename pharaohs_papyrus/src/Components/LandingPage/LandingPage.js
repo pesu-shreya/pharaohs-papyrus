@@ -1,8 +1,8 @@
 import React from 'react';
-import './HomePage.css';
+import './LandingPage.css';
 import home_background from '../Assets/LoginBackground.jpg';
 
-const HomePage = () => {
+const LandingPage = () => {
     return (
         <div className='homeContainer'>
             <div className='homeBackground'>
@@ -23,4 +23,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default LandingPage;
