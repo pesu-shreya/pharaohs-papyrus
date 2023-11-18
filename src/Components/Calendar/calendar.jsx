@@ -7,7 +7,7 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './calendar.css'
+import "./App.css";
 
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
@@ -39,7 +39,7 @@ const events = [
     },
 ];
 
-function Calen() {
+function App() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
@@ -51,8 +51,7 @@ function Calen() {
             const d2 = new Date(newEvent.start);
             const d3 = new Date(allEvents[i].end);
             const d4 = new Date(newEvent.end);
-    
-
+            
              if (
               ( (d1  <= d2) && (d2 <= d3) ) || ( (d1  <= d4) &&
                 (d4 <= d3) )
@@ -69,7 +68,7 @@ function Calen() {
     }
 
     return (
-        <div className="Cal">
+        <div className="App">
             <h1>Calendar</h1>
             <h2>Add New Event</h2>
             <div>
@@ -85,4 +84,4 @@ function Calen() {
     );
 }
 
-export default Calen;
+export default App;
