@@ -1,10 +1,13 @@
 import React from "react";
 import "./LandingPage.css";
-import home_background from "../Assets/LoginBackground.jpg";
+import MenuBar from "../MenuBar/MenuBar";
+import home_background from "../assets/LoginBackground.jpg";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
     return (
+        <>
+        <MenuBar/>
         <div className="homeContainer">
             <div className="homeBackground">
                 <img src={home_background} alt="Background" />
@@ -31,6 +34,7 @@ const LandingPage = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

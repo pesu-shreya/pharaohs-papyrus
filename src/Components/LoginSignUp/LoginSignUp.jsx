@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./LoginSignUp.css";
+import MenuBar from "../MenuBar/MenuBar";
 import { Link } from "react-router-dom";
 
 
 
-import user_icon from "../Assets/person.png";
-import email_icon from "../Assets/email.png";
-import password_icon from "../Assets/password.png";
-import register_image from "../Assets/LoginBackground.jpg"
+import user_icon from "../assets/person.png";
+import email_icon from "../assets/email.png";
+import password_icon from "../assets/password.png";
+import register_image from "../assets/LoginBackground.jpg"
 
 const LoginSignUp = () => {
     const [action, setAction] = useState("Sign Up");
@@ -16,6 +17,8 @@ const LoginSignUp = () => {
     };
 
     return (
+        <>
+        <MenuBar/>
         <div className="layout">
             <div className="registerImage">
                 <img src={register_image} alt="login_image" />
@@ -76,6 +79,7 @@ const LoginSignUp = () => {
 
 
         </div>
+        </>
     );
 };
 
