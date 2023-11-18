@@ -1,0 +1,38 @@
+.nav{
+    display: inline-block;
+    font-family: papyrus;  
+}
+
+.PP{
+    font-weight:bold;
+    font-size: larger;
+    position: absolute;
+    top:25px;
+    left:2%;
+}
+
+.Login {
+    background-color: transparent;
+    position:absolute;
+    border: 0;
+    color: blue;
+    font-weight: 600;
+    line-height: 1;
+    margin:10px;
+    left:85%;
+    top:25px;
+}  
+
+.Signup{
+    background-color: blue;
+    position:absolute;
+    border: 0;
+    color: white;
+    font-weight: 600;
+    line-height: 1;
+    margin:10px;
+    left:90%;
+    width:100px;
+    height:30px;
+    border-radius: 20px;
+}

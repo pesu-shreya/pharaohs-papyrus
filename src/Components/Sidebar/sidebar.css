@@ -1,0 +1,19 @@
+.sidebar{
+    display: flex;
+    position: absolute;
+    left:20px;
+    top:70px;
+    flex-basis: 100px;
+    flex-direction: column;
+    font-weight: 600;
+    color: white;
+}
+
+.item{
+    margin:20px;
+}
+
+.item span{
+    display: flex;
+    flex-direction: column;
+}
