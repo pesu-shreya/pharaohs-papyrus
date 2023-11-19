@@ -7,11 +7,8 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-<<<<<<< HEAD
 import "./calendar.css";
-=======
-import "./App.css";
->>>>>>> ae984678ca6b411686433169c4303cff022bde4d
+
 
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
@@ -43,36 +40,35 @@ const events = [
     },
 ];
 
-function App() {
+function Calen() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
-        
-        for (let i=0; i<allEvents.length; i++){
 
-            const d1 = new Date (allEvents[i].start);
+        for (let i = 0; i < allEvents.length; i++) {
+
+            const d1 = new Date(allEvents[i].start);
             const d2 = new Date(newEvent.start);
             const d3 = new Date(allEvents[i].end);
             const d4 = new Date(newEvent.end);
-            
-             if (
-              ( (d1  <= d2) && (d2 <= d3) ) || ( (d1  <= d4) &&
-                (d4 <= d3) )
-              )
-            {   
-                alert("CLASH"); 
+
+            if (
+                ((d1 <= d2) && (d2 <= d3)) || ((d1 <= d4) &&
+                    (d4 <= d3))
+            ) {
+                alert("CLASH");
                 break;
-             }
-    
+            }
+
         }
-        
-        
+
+
         setAllEvents([...allEvents, newEvent]);
     }
 
     return (
-        <div className="App">
+        <div className="Call">
             <h1>Calendar</h1>
             <h2>Add New Event</h2>
             <div>
@@ -88,4 +84,4 @@ function App() {
     );
 }
 
-export default App;
+export default Calen;
