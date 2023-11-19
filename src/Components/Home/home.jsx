@@ -2,9 +2,12 @@ import "./home.css";
 import fakeData from "../assets/MOCK_DATA.json";
 import * as React from "react";
 import { useTable } from "react-table";
+import { useLocation, } from "react-router-dom";
 import Sidebar from "../Sidebar/sidebar";
 
 function Home() {
+
+  const location = useLocation()
   const data = React.useMemo(() => fakeData, []);
   const columns = React.useMemo(
     () => [
@@ -41,14 +44,22 @@ function Home() {
 
   return (
     <div className="App">
+
       <div className='PPhome'>
         <span>Pharaoh's Papyrus</span>
         <div className="underlineHome"></div>
-
       </div>
+
+      <div className="welcome">
+        <span>Welcome {location.state.id}!</span>
+      </div>
+
+
       <div className="sidebar">
         <Sidebar />
       </div>
+
+
       <div className="containerHome">
         <table {...getTableProps()}>
           <thead>

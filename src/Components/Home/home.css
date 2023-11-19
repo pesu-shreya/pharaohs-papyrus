@@ -67,6 +67,22 @@ tbody td:hover:before {
   z-index: -1;
 }
 
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  margin-left: 700px;
+  margin-top: 40px;
+}
+
+.welcome span{
+  font-family: 'papyrus';
+  font-size: 40px;
+  color: #2d2d2d;
+  font-weight: bold;
+}
+
+
 .PPhome {
   font-weight: bold;
   font-size: larger;

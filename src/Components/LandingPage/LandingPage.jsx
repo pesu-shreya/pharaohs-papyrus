@@ -4,7 +4,7 @@ import MenuBar from "../MenuBar/MenuBar";
 import home_background from "../assets/LoginBackground.jpg";
 import { Link } from "react-router-dom";
 
-const LandingPage = () => {
+function LandingPage() {
     return (
         <>
             <MenuBar />
