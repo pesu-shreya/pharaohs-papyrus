@@ -7,7 +7,11 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+<<<<<<< HEAD
 import "./calendar.css";
+=======
+import "./App.css";
+>>>>>>> ae984678ca6b411686433169c4303cff022bde4d
 
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
@@ -39,7 +43,7 @@ const events = [
     },
 ];
 
-function Calen() {
+function App() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
@@ -84,4 +88,4 @@ function Calen() {
     );
 }
 
-export default Calen;
+export default App;
