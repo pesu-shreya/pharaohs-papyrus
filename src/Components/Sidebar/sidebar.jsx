@@ -7,36 +7,42 @@ import out from '../assets/out.png'
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  return (
-    <>
-        <div className='sidebar'>
-            <div className='item'>
-                <span id='add'>
-                    <img src={add} alt='plus'/>
-                    Add Event                    
-                </span>
+    return (
+        <>
+            <div className='sidebar'>
+                <div className='item'>
+                    <span id='add'>
+                        <img src={add} alt='plus' />
+                        Add Event
+                    </span>
+                </div>
+                <div className='item'>
+                    <Link to="/login/home/calendar" style={{ textDecoration: "none", color: "black" }}>
+                        <span id='cal'>
+                            <img src={cal} alt='calendar' />
+                            Calendar
+                        </span>
+                    </Link>
+
+                </div>
+                <div className='item'>
+                    <Link to="/login/home/about" style={{ textDecoration: "none", color: "black" }}>
+                        <span id='info'>
+                            <img src={inf} alt='About' />
+                            About Us
+                        </span>
+                    </Link>
+
+                </div>
+                <div className='item'>
+                    <span id='out'>
+                        <img src={out} alt='Leave' />
+                        Sign Out
+                    </span>
+                </div>
             </div>
-            <div className='item'>
-                <span id='cal'>
-                    <img src={cal} alt='calendar'/>
-                    Calendar                   
-                </span>
-            </div>
-            <div className='item'>
-                <span id='inf'>
-                    <img src={inf} alt='About'/>
-                    About Us                    
-                </span>
-            </div>
-            <div className='item'>
-                <span id='out'>
-                    <img src={out} alt='Leave'/>
-                    Sign Out                    
-                </span>
-            </div>
-        </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default Sidebar

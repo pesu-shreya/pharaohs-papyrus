@@ -1,15 +1,18 @@
-html,
-body {
-  height: 100%;
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/papyrusBG.jpg');
 }
-body {
+
+/* body {
   margin: 0;
   background: -webkit-linear-gradient(45deg, #49a09d, #5f2c82);
   background: linear-gradient(45deg, #49a09d, #5f2c82);
   font-family: sans-serif;
-  /* font-weight: 100; */
-}
-.container {
+  font-weight: 100;
+} */
+.containerHome {
   position: absolute;
   top: 52%;
   left: 64%;
@@ -17,32 +20,42 @@ body {
   overflow-y: scroll;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+
 }
+
 table {
   width: 800px;
   height: 800px;
   border-collapse: collapse;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
 th,
 td {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
+
 th {
   text-align: left;
 }
+
 thead th {
   background-color: #55608f;
 }
+
 tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
 tbody td {
   position: relative;
 }
+
 tbody td:hover:before {
   content: "";
   position: absolute;
@@ -54,13 +67,21 @@ tbody td:hover:before {
   z-index: -1;
 }
 
-.PP{
-  font-weight:bold;
+.PPhome {
+  font-weight: bold;
   font-size: larger;
   position: absolute;
-  top:25px;
-  left:5%;
+  top: 25px;
+  left: 5%;
   font-family: papyrus;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 50px;
+}
+
+.underlineHome {
+  margin-left: 30px;
+  width: 270px;
+  height: 2px;
+  background: #2d2d2d;
+  border-radius: 10px;
 }

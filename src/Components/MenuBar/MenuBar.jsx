@@ -15,17 +15,17 @@ const MenuBar = () => {
                 <div className="homeLogo">
                     <img src={website_logo} alt="logo" />
                     <div className="homeText">
-                        <span><Link to='/land' style={{ textDecoration: "none", color: "bisque" }}>Home</Link></span>
+                        <span><Link to='/home' style={{ textDecoration: "none", color: "bisque" }}>Home</Link></span>
                     </div>
                 </div>
                 <div className="aboutUs">
-                    <span><Link  to="/about" style={{ textDecoration: "none", color: "bisque" }}>
+                    <span><Link to="/about" style={{ textDecoration: "none", color: "bisque" }}>
                         About Us
-                        </Link>
+                    </Link>
                     </span>
                 </div>
             </div>
-        </div> 
+        </div>
     );
 };
 

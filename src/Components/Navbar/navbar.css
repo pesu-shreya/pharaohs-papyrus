@@ -3,9 +3,9 @@
     font-family: papyrus;  
 }
 
-.PP{
+.PPnav{
     font-weight:bold;
-    font-size: larger;
+    font-size: 40px;
     position: absolute;
     top:25px;
     left:2%;

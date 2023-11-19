@@ -1,13 +1,13 @@
 .bg{
     position: fixed;
     top:80px;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 #About{
     position: relative;
-    font-family: papyrus;
+    font-family: 'papyrus';
     font-weight: bold;
     top:150px;
     left:300px;

@@ -2,7 +2,7 @@ import "./home.css";
 import fakeData from "../assets/MOCK_DATA.json";
 import * as React from "react";
 import { useTable } from "react-table";
-import  Sidebar  from "../Sidebar/sidebar";
+import Sidebar from "../Sidebar/sidebar";
 
 function Home() {
   const data = React.useMemo(() => fakeData, []);
@@ -41,9 +41,15 @@ function Home() {
 
   return (
     <div className="App">
-      <span className='PP'>Pharaoh's Papyrus</span>
-        <Sidebar/>
-      <div className="container">
+      <div className='PPhome'>
+        <span>Pharaoh's Papyrus</span>
+        <div className="underlineHome"></div>
+
+      </div>
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="containerHome">
         <table {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
