@@ -11,9 +11,11 @@
 
 .item{
     margin:20px;
+    
 }
 
 .item span{
     display: flex;
+    cursor: pointer;
     flex-direction: column;
 }

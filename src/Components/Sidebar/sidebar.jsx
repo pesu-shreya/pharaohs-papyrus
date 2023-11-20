@@ -35,10 +35,16 @@ function Sidebar() {
 
                 </div>
                 <div className='item'>
-                    <span id='out'>
-                        <img src={out} alt='Leave' />
-                        Sign Out
-                    </span>
+                    <script>
+                        function
+                    </script>
+                    <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                        <span id='out' onClick={() => { alert("You are signing out") }}>
+                            <img src={out} alt='Leave' />
+                            Sign Out
+                        </span>
+
+                    </Link>
                 </div>
             </div>
         </>

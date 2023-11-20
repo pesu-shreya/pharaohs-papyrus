@@ -1,9 +1,13 @@
 import React from "react";
 import "./MenuBar.css";
 import website_logo from "../assets/pharaoh.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 const MenuBar = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="menu">
             <div className="websiteName">
@@ -14,9 +18,9 @@ const MenuBar = () => {
             <div className="menuIcons">
                 <div className="homeLogo">
                     <img src={website_logo} alt="logo" />
-                    <div className="homeText">
-                        <span><Link to='/home' style={{ textDecoration: "none", color: "bisque" }}>Home</Link></span>
-                    </div>
+                    <button className="homeText" onClick={() => navigate(-1)}>
+                        Home
+                    </button>
                 </div>
                 <div className="aboutUs">
                     <span><Link to="/about" style={{ textDecoration: "none", color: "bisque" }}>
@@ -25,7 +29,7 @@ const MenuBar = () => {
                     </span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
