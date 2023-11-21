@@ -1,9 +1,9 @@
 import React from 'react'
 import './aboutus.css'
 import Navbar from '../Navbar/navbar'
-import planner from '../assets/planner.png'
-import calendar from '../assets/calendar.png'
-import bg from '../assets/aboutusBG.png'
+import planner from '../Assets/planner.png'
+import calendar from '../Assets/calendar.png'
+import bg from '../Assets/aboutusBG.png'
 
 function Aboutus() {
   return (

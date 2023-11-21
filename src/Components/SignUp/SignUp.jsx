@@ -4,10 +4,10 @@ import axios from "axios";
 import "./SignUp.css";
 import MenuBar from "../MenuBar/MenuBar";
 
-import user_icon from "../assets/person.png";
-import email_icon from "../assets/email.png";
-import password_icon from "../assets/password.png";
-import register_image from "../assets/LoginBackground.jpg";
+import user_icon from "../Assets/person.png";
+import email_icon from "../Assets/email.png";
+import password_icon from "../Assets/password.png";
+import register_image from "../Assets/LoginBackground.jpg";
 
 function SignUp() {
     const navigate = useNavigate();

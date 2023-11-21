@@ -1,9 +1,9 @@
 import React from 'react'
 import './sidebar.css'
-import add from '../assets/add.png'
-import cal from '../assets/cal.png'
-import inf from '../assets/inf.png'
-import out from '../assets/out.png'
+import add from '../Assets/add.png'
+import cal from '../Assets/cal.png'
+import inf from '../Assets/inf.png'
+import out from '../Assets/out.png'
 import { Link } from "react-router-dom";
 
 function Sidebar() {

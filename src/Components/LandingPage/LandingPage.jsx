@@ -1,7 +1,7 @@
 import React from "react";
 import "./LandingPage.css";
 import MenuBar from "../MenuBar/MenuBar";
-import home_background from "../assets/LoginBackground.jpg";
+import home_background from "../Assets/LoginBackground.jpg";
 import { Link } from "react-router-dom";
 
 function LandingPage() {

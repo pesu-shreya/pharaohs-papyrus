@@ -1,12 +1,12 @@
 //import logo from './Components/Assets/papyrus.jpg';
 import "./App.css";
-import LandingPage from "./components/LandingPage/LandingPage";
-import SignUp from "./components/SignUp/SignUp";
-import Login from "./components/Login/Login";
-// import MenuBar from "./components/MenuBar/MenuBar";
-import Aboutus from "./components/AboutUs/aboutus";
-import Home from "./components/Home/home";
-import Calen from "./components/Calendar/calendar";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import SignUp from "./Components/SignUp/SignUp";
+import Login from "./Components/Login/Login";
+// import MenuBar from "./Components/MenuBar/MenuBar";
+import Aboutus from "./Components/AboutUs/aboutus";
+import Home from "./Components/Home/home";
+import Calen from "./Components/Calendar/calendar";
 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";

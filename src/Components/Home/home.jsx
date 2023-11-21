@@ -1,5 +1,5 @@
 import "./home.css";
-import fakeData from "../assets/MOCK_DATA.json";
+import fakeData from "../Assets/MOCK_DATA.json";
 import * as React from "react";
 import { useTable } from "react-table";
 import { useLocation, } from "react-router-dom";

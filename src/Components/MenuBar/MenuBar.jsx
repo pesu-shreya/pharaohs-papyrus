@@ -1,6 +1,6 @@
 import React from "react";
 import "./MenuBar.css";
-import website_logo from "../assets/pharaoh.png";
+import website_logo from "../Assets/pharaoh.png";
 import { Link, useNavigate } from "react-router-dom";
 
 

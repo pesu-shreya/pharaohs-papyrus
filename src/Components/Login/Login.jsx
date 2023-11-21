@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 import MenuBar from "../MenuBar/MenuBar";
-import email_icon from "../assets/email.png";
-import password_icon from "../assets/password.png";
-import register_image from "../assets/LoginBackground.jpg";
+import email_icon from "../Assets/email.png";
+import password_icon from "../Assets/password.png";
+import register_image from "../Assets/LoginBackground.jpg";
 
 function Login() {
     const navigate = useNavigate();
