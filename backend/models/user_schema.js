@@ -1,15 +1,7 @@
 const mongoose = require("mongoose");
-var url = "mongodb://127.0.0.1:27017/pharaohs_papyrus_db";
+const connectDB = require("../database/config");
 
-mongoose
-    .connect(url)
-    .then(() => {
-        console.log("Connected to mongodb.");
-    })
-    .catch((err) => {
-        console.log("Could not connect to mongodb.");
-        console.log(err);
-    });
+connectDB();
 
 const userSchema = new mongoose.Schema({
     userName: {

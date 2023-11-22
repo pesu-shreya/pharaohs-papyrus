@@ -6,6 +6,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+const connectDB = require("./database/config");
+
+connectDB();
+
 // app.get("/", cors(), (req, res) => {});
 
 app.post("/login", async (req, res) => {
