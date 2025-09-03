@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../AuthContext";
+import { useNavigate, Link } from "react-router-dom";
 import "./MenuBar.css";
 import website_logo from "../Assets/pharaoh.png";
-import { Link, useNavigate } from "react-router-dom";
 
-
-
-const MenuBar = () => {
+function MenuBar() {
+    const { logout } = useContext(AuthContext);
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+        window.location.reload(); // Prevents back navigation to protected pages
+    };
 
     return (
         <div className="menu">
@@ -28,9 +34,10 @@ const MenuBar = () => {
                     </Link>
                     </span>
                 </div>
+                <button className="signout-btn" onClick={handleLogout}>Sign Out</button>
             </div>
         </div >
     );
-};
+}
 
 export default MenuBar;

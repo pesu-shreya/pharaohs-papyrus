@@ -1,28 +1,25 @@
 const mongoose = require("mongoose");
-const connectDB = require("../database/config");
-
-connectDB();
 
 const eventSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-    start: {
-        type: Date,
-        required: true,
-    },
-    end: {
-        type: Date,
-        required: true,
-    },
-    user: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "users",
         required: true,
     },
+    title: { 
+        type: String, 
+        required: true 
+    },
+    description: String,
+    category: String,
+    priority: {
+        type: String,
+        enum: ["Low", "Medium", "High"],
+        default: "Medium",
+    },
+    start: Date,
+    end: Date,
+    createdAt: { type: Date, default: Date.now },
 });
 
-const Event = mongoose.model("events", eventSchema);
-
-module.exports = Event;
+module.exports = mongoose.model("events", eventSchema);

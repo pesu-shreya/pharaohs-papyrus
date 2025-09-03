@@ -5,6 +5,7 @@
     height: auto;
     margin-top: 0px;
     justify-content: center;
+    align-items: stretch;
 }
 
 .container{
@@ -124,4 +125,25 @@
 .registerImage img{
     border-radius: 20px;
     height: auto;
+}
+
+.registerImageSignUp {
+    display: flex;
+    margin-top: 50px;
+    height: 475px;
+    width: auto;
+}
+
+.registerImageSignUp img {
+    border-radius: 20px;
+    height: auto;
+}
+
+.error-alert {
+  color: #fff;
+  background: #e74c3c;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
 }

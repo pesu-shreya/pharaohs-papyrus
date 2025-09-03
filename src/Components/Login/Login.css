@@ -125,3 +125,12 @@
     border-radius: 20px;
     height: auto;
 }
+
+.error-alert {
+  color: #fff;
+  background: #e74c3c;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}

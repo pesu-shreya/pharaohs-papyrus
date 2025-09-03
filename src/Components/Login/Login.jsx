@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
@@ -6,29 +6,23 @@ import MenuBar from "../MenuBar/MenuBar";
 import email_icon from "../Assets/email.png";
 import password_icon from "../Assets/password.png";
 import register_image from "../Assets/LoginBackground.jpg";
+import { AuthContext } from "../../AuthContext";
 
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { login } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
-    async function submit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            const res = await axios.post("http://localhost:3000/login", {
-                email,
-                password
-            });
-
-            if (res.data === 'exists') {
-                navigate('/login/home', { state: { id: email } });
-            } else if (res.data === 'noexist') {
-                alert("User does not exist! Please sign up to access Pharaoh's Papyrus.");
-            }
+            const res = await axios.post("/login", { email, password });
+            login(res.data.user, res.data.token);
+            navigate("/"); // Go to LandingPage after login
         } catch (err) {
-            alert("Wrong details entered!");
-            console.error(err);
+            setError("Invalid credentials");
         }
     }
 
@@ -39,21 +33,20 @@ function Login() {
                 <div className="registerImageLogin">
                     <img src={register_image} alt="login_image" />
                 </div>
-
                 <div className="container">
                     <div className="header">
                         <div className="text">Login</div>
                         <div className="underline"></div>
                     </div>
-                    <form onSubmit={submit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="inputs">
                             <div className="input">
                                 <img src={email_icon} alt="mail" />
-                                <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" />
+                                <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" required />
                             </div>
                             <div className="input">
                                 <img src={password_icon} alt="pwd" />
-                                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" required />
                             </div>
                         </div>
                         <div className="submitContainer">
@@ -61,6 +54,7 @@ function Login() {
                                 Login
                             </button>
                         </div>
+                        {error && <div className="error-alert">{error}</div>}
                     </form>
                     <div className="accountCheck">
                         Don't have an account?{" "}

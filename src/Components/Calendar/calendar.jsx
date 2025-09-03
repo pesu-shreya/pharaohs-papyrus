@@ -2,14 +2,15 @@ import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./calendar.css";
 import MenuBar from "../MenuBar/MenuBar";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../../AuthContext";
 
 
 
@@ -24,28 +25,17 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const events = [
-    {
-        title: "Big Meeting",
-        allDay: true,
-        start: new Date(2021, 6, 0),
-        end: new Date(2021, 6, 0),
-    },
-    {
-        title: "Vacation",
-        start: new Date(2021, 6, 7),
-        end: new Date(2021, 6, 10),
-    },
-    {
-        title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23),
-    },
-];
-
 function Calen() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
+    const [allEvents, setAllEvents] = useState([]);
+    const { token } = useContext(AuthContext);
+
+    useEffect(() => {
+        if (token) {
+            axios.get("/events", { headers: { Authorization: `Bearer ${token}` } })
+                .then(res => setAllEvents(res.data));
+        }
+    }, [token]);
 
     function handleAddEvent() {
 
@@ -66,8 +56,11 @@ function Calen() {
 
         }
 
-
-        setAllEvents([...allEvents, newEvent]);
+        axios.post("/events", newEvent, { headers: { Authorization: `Bearer ${token}` } })
+            .then(res => {
+                setAllEvents([...allEvents, res.data]);
+                setNewEvent({ title: "", start: "", end: "" }); // Clear the form
+            });
     }
 
     return (

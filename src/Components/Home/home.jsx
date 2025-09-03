@@ -1,89 +1,62 @@
 import "./home.css";
-import fakeData from "../Assets/MOCK_DATA.json";
-import * as React from "react";
-import { useTable } from "react-table";
-import { useLocation, } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/sidebar";
+import axios from "axios";
+import { AuthContext } from "../../AuthContext";
 
 function Home() {
+  const location = useLocation();
+  const { token, user } = useContext(AuthContext);
+  const [events, setEvents] = useState([]);
 
-  const location = useLocation()
-  const data = React.useMemo(() => fakeData, []);
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: "ID",
-        accessor: "id",
-      },
-      {
-        Header: "First Name",
-        accessor: "first_name",
-      },
-      {
-        Header: "Last Name",
-        accessor: "last_name",
-      },
-      {
-        Header: "Email",
-        accessor: "email",
-      },
-      {
-        Header: "Gender",
-        accessor: "gender",
-      },
-      {
-        Header: "University",
-        accessor: "university",
-      },
-    ],
-    []
-  );
-
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+  useEffect(() => {
+    if (token) {
+      axios
+        .get("/events", { headers: { Authorization: `Bearer ${token}` } })
+        .then((res) => setEvents(res.data));
+    }
+  }, [token]);
 
   return (
     <div className="App">
-
-      <div className='PPhome'>
+      <div className="PPhome">
         <span>Pharaoh's Papyrus</span>
         <div className="underlineHome"></div>
       </div>
 
       <div className="welcome">
-        <span>Welcome {location.state.id}!</span>
+        <span>Welcome {user?.name || user?.email || "User"}!</span>
       </div>
-
 
       <div className="sidebar">
         <Sidebar />
       </div>
 
-
       <div className="containerHome">
-        <table {...getTableProps()}>
+        <h3>Your Events</h3>
+        <table>
           <thead>
-            {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render("Header")}
-                  </th>
-                ))}
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Category</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {events.map((ev) => (
+              <tr key={ev._id}>
+                <td>{ev.title}</td>
+                <td>{ev.description}</td>
+                <td>{ev.start ? new Date(ev.start).toLocaleString() : ""}</td>
+                <td>{ev.end ? new Date(ev.end).toLocaleString() : ""}</td>
+                <td>{ev.category}</td>
+                <td>{ev.priority}</td>
               </tr>
             ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {rows.map((row) => {
-              prepareRow(row);
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
-                  ))}
-                </tr>
-              );
-            })}
           </tbody>
         </table>
       </div>

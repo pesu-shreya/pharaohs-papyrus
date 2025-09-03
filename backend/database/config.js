@@ -1,17 +1,14 @@
 const mongoose = require("mongoose");
 
-const connectDB = async () => {
-    try {
-        const url = "mongodb://127.0.0.1:27017/pharaohs_papyrus_db";
-        await mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log("Connected to MongoDB");
-    } catch (error) {
-        console.error("Error connecting to MongoDB:", error);
-        process.exit(1);
-    }
-};
+mongoose.connect("mongodb://127.0.0.1:27017/pharaohs_papyrus_db", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
-module.exports = connectDB;
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Connected to mongodb.");
+});
+
+module.exports = db;
